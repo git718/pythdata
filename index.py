@@ -29,7 +29,10 @@ for month in sortedMonths2023:
     for file in folderContents:
         orderedLinks.append(data + f"/{month}/{file}")
 
+allDataFrames = []
+
 for link in orderedLinks:
     df = pd.read_csv(link, dtype={"MEXSTATE": "string", "CONTCODE": "string"})
-    print(df)
+    allDataFrames.append(df)
 
+oneData = pd.concat(allDataFrames)
