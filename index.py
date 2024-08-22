@@ -36,18 +36,24 @@ for link in orderedLinks:
     allDataFrames.append(df)
 
 oneData = pd.concat(allDataFrames)
-# print(oneData.info())
-x = np.unique(np.array(oneData["MONTH"]))
 y = []
-print(x)
+x = np.unique(np.array(oneData["MONTH"]))
 for i in x:
-    values = np.array(oneData["VALUE"])
-    if len(str(i)) < 2:
-        i = "0" + str(i)
-    monthly_total_amounts = np.sum(values, where="MONTH" == i)
-    y.append(monthly_total_amounts)
-print(y)
-# mpl.xlabel("months")
-# mpl.ylabel("value")
-# mpl.scatter(x, y)
-# mpl.show()
+    newdata = oneData.loc[oneData["MONTH"] == i]
+    total = np.sum(np.array(newdata["VALUE"]))
+    y.append(total)
+mpl.xlabel("months")
+mpl.ylabel("value")
+mpl.plot(x, y)
+mpl.show()
+
+y1 = []
+x1 = np.unique(np.array(oneData["MONTH"]))
+for i in x1:
+    newdata1 = oneData.loc[oneData["MONTH"] == i]
+    total1 = np.sum(np.array(newdata1["SHIPWT"]))
+    y1.append(total1)
+mpl.xlabel("months")
+mpl.ylabel("weight")
+mpl.plot(x1, y1)
+mpl.show()
