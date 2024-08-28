@@ -41,3 +41,4 @@ mpl.ylabel("Trucks crossing border")
 mpl.plot(x, y)
 mpl.show()
 # Figure A shows that sudden drops happened in year 2008 (during global economic shock) and in 2020 (approximately April) which could be due to Covid situation.
+# Most common ups and downs are due to changing seasons of the year: ups take place at around spring time, downs in December (Christmas time and end of the year)
