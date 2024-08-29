@@ -26,7 +26,7 @@ while counter < len(i):
         sorted_dates.append(i[counter])
     counter = counter + 1
 
-df_trucks = df.loc[df["Measure"] == "Trucks"]
+df_trucks = df.loc[(df["Measure"] == "Trucks") | (df["Measure"] == "Truck Containers Loaded") | (df["Measure"] == "Truck Containers Empty")]
 # we get information only about trucks crossing border in the period between 1996 and 2023
 trucks_data = []
 for i in sorted_dates:
@@ -40,10 +40,13 @@ mpl.xlabel("1996 - 2023 yy")
 mpl.ylabel("Trucks crossing border")
 mpl.plot(x, y)
 mpl.show()
-# Figure A shows that sudden drops happened in year 2008 (during global economic shock) and in 2020 (approximately April) which could be due to Covid situation.
+# Figure_1 shows that sudden drops happened in year 2008 (during global economic shock) and in 2020 (approximately April) which could be due to Covid situation.
 # Most ups and downs are due to changing seasons of the year: ups take place at around spring time, downs in December (Christmas time and end of the year)
+#Figure_2 considers not only measure "Trucks", but also adds "Truck Containers Loaded" and "Truck Containers Empty" to the equation. 
+
 
 #get port names, states, types of vehicles/measures (unique values)
+
 port_names = pd.unique(pd.Series(df["Port Name"].sort_values()))
 with open ("./port_names.txt", "w") as f:
     f.write("")
