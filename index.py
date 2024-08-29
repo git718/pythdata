@@ -43,9 +43,22 @@ df = df.convert_dtypes()
 # Figure A shows that sudden drops happened in year 2008 (during global economic shock) and in 2020 (approximately April) which could be due to Covid situation.
 # Most ups and downs are due to changing seasons of the year: ups take place at around spring time, downs in December (Christmas time and end of the year)
 
-#get port names (unique values)
-measures = pd.unique(pd.Series(df["Port Name"].sort_values()))
+#get port names, states, types of vehicles/measures (unique values)
+port_names = pd.unique(pd.Series(df["Port Name"].sort_values()))
 with open ("./port_names.txt", "w") as f:
+    f.write("")
+    for i in port_names:
+        f.write(i + '\n')
+
+states = pd.unique(pd.Series(df["State"].sort_values()))
+with open ("./states.txt", "w") as f:
+    f.write("")
+    for i in states:
+        f.write(i + '\n')
+
+measures = pd.unique(pd.Series(df["Measure"].sort_values()))
+with open ("./measures.txt", "w") as f:
     f.write("")
     for i in measures:
         f.write(i + '\n')
+

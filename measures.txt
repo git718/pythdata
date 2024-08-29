@@ -1,0 +1,12 @@
+Bus Passengers
+Buses
+Pedestrians
+Personal Vehicle Passengers
+Personal Vehicles
+Rail Containers Empty
+Rail Containers Loaded
+Train Passengers
+Trains
+Truck Containers Empty
+Truck Containers Loaded
+Trucks
