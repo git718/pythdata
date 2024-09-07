@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as mpl
 import os
 
-# read csv file indo dataframe
+# read csv file into dataframe
 df = pd.read_csv("./Border_Crossing_Entry_Data.csv")
 #convert object types to string types
 df = df.convert_dtypes()
